@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>article</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .back-link {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>The Clock & I</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>article</em></span>
+        </div>
+        
+        <div class="poem-content">
+            <p>The two of us were arch enemies. Total opposites. It was used to ticking while I, on the other hand, had always been in favour of complete silence. Each time the elapsed second made its way into my ear, my anxiety felt like accompanying me for the next couple of minutes.</p>
+
+            <p>However, this wasn’t the case until a few years back. The day was an ordinary one and soon the dark, shadowy night decided to take over the sky. I had been very fond of darkness, until that day. As far as I can recall, the darkness seemed menacing enough to mercilessly engulf me in its pitch-black blanket.</p>
+
+            <p>So, I chose sleep as an escape from the incessant dark blanket of the sky. But even then, something, that I was unaware of, was continuously making me uncomfortable, as if trying to steal my precious night’s sleep. Unfortunately, when I tried hard to figure out what that something was, it turned out to be the ticking of my room’s clock.</p>
+
+            <p>Could I fight it? Sadly, no. Was I helpless? Irrefutably. I turned to my back so I could properly face the clock. That’s when I realized that this sudden fear of mine was inexplainable. It was nothing I hadn’t seen before. The hands of the clock were as normal as they always had been. Its sound was the one I’d been hearing ever since I learned to distinguish between sounds.</p>
+
+            <p>I couldn’t help but ask myself how I’d never seen the very same clock as a potential vessel of another sleepless night. Somehow, I managed to fall asleep, just like I do these days and by morning I’d somewhat forgotten about it, and I couldn’t recall it as anything more than a scary nightmare.</p>
+
+            <p>Just that it wasn’t a nightmare. This theory of mine got proved further with the nights that followed. They weren’t any better. The moment our house went silent, the sound of the clock crept into my ears and kept me engaged for as long as it could.</p>
+
+            <p>This ticking kept reverberating inside my head until I could find something else to focus on. Shifting my focus from the clock to something else ended up being my only possible escape from it. Now, I couldn’t ask my parents to throw all the clocks away, could I?</p>
+
+            <p>Several years have passed since the clock first started playing its tricks on me, but the ticking of the clock continues to haunt me to this date. I’d only say that I’ve grown up to live with it and hopefully I’ll survive through the night today.</p>
+        </div>
+        
+        <a href="article.html" class="back-link">← Back to Article</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

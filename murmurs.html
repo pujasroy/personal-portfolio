@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>murmurs</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+        :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .italics {
+            font-style: italic;
+        }
+        .back-link {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>murmurs</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>poetry</em></span>
+        </div>
+        
+        <div class="poem-content">
+            <p>i always dreaded the night you would finally leave, and set me free,</p>
+            <p>from your shackles of <span class="italics">sweet delight</span>.</p>
+            <p>in a world where no one else has claimed me as theirs, like you have,</p>
+            <p>i feared of the morning i would have to make breakfast for myself,</p>
+            <p>knowing that your jejune thoughts, or well built physique,</p>
+            <p>won't make it to the side of my chair this morning.</p>
+            <p>i doubted if i'd ever be alright gulping down the food,</p>
+            <p>that may have seemed just as tasteless as our last few convos.</p>
+            <p>though i'll admit here and now that the process of <span class="italics">untangling</span></p>
+            <p>the taste of your food from my mouth,</p>
+            <p>was exponentially harder than it used to be for us</p>
+            <p>to untie our tied tongues, in the bedroom.</p>
+            <p>yet, I am here today,</p>
+            <p>bearing the thought of a future without you,</p>
+            <p>holding up despite numerous breakdowns</p>
+            <p>ever since you disappeared from my world.</p>
+            <p>with my young, reckless self gazing at the <span class="italics">shadowy trail</span>,</p>
+            <p>that's been wearing away with you,</p>
+            <p>leaving behind the distant murmurs...</p>
+            <p>of a <span class="italics">beguiling</span> future together.</p>
+        </div>
+        
+        <a href="poetry.html" class="back-link">← Back to Poetry</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fortune Teller</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .back-link {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>The Fortune Teller</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>poetry</em></span>
+        </div>
+
+        <div class="poem-content">
+            <p>I once went to a fortune teller,</p>
+            <p>To know if the future favors me,</p>
+            <p>And enquire about my lines of fate,</p>
+            <p>To learn of what awaits me.</p>
+
+            <p>Upon entering her place,</p>
+            <p>I was already feeling better,</p>
+            <p>Than before when I kept sulking,</p>
+            <p>Prior to when I received my letter.</p>
+
+            <p>But oh, I saw a queue of people,</p>
+            <p>Waiting to have their futures revealed,</p>
+            <p>So I thought it well to join them,</p>
+            <p>And be a part of the ones to appeal.</p>
+
+            <p>I waited and waited and waited,</p>
+            <p>Until when at last it was my turn,</p>
+            <p>To have the life ahead of me judged,</p>
+            <p>And know what’s it left to be earned.</p>
+
+            <p>The woman stood up to welcome me,</p>
+            <p>Into the house of fools, she said,</p>
+            <p>I was baffled as to why she said so,</p>
+            <p>Thought if I had been misled.</p>
+
+            <p>And finally when she started speaking,</p>
+            <p>Instead of doing the usual palm reading,</p>
+            <p>She made me aware of the present,</p>
+            <p>And the opportunities I could be heeding.</p>
+
+            <p>She said, “The future isn’t to be played with.</p>
+            <p>The present is what you can ponder,</p>
+            <p>And last but not the least,</p>
+            <p>Destiny is yours to create and conquer.”</p>
+
+            <p>Her words seemed to leave an impact on me,</p>
+            <p>For success seemed too near,</p>
+            <p>The present which I steered clear of,</p>
+            <p>Paved the way to a beautiful future.</p>
+        </div>
+
+        <a href="poetry.html" class="back-link">← Back to Poetry</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

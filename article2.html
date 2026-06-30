@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>article</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .back-link {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>Making peace with the gray areas of life</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>article</em></span>
+        </div>
+        
+        <div class="poem-content">
+            <p>The essence to the “gray areas” of life has always been the pulse of uncertainty. These are the sensitive areas of moral conflict, stifled by the absence of absolute judgment. They hold the key to dubiousness, as well as liberation. They help carve through paths of rights and wrongs, which just haven’t been destined to their final predicament.</p>
+
+            <p>Moral dilemma is often frowned upon by our friends, elders, and just about anyone who is actively involved in this society. After all, the collective nod they might be awaiting to display, or the frontal lobe pressure of shaking their heads in unison are both sidelined by this so-called zone of (in)sensitivity. Some might even label you as an unstable, unreliable person with an inherent skill issue.</p>
+
+            <p>This binary focus usually leads to an impaired decision, a blurred finish line. But the alternate bridge to a brighter future is built on acknowledging everything in between — not just ‘yes’ or ‘no’, happy or sad, success or failure.</p>
+
+            <p>People are lightning quick to compare life with a moving train. But the contrast they nearly always miss out on is that there are stops. There are stops where you can board and de-board, and there are stops where you can take a halt. Now, do we label this station unstable and unreliable? It all boils down to the fact that between right and wrong, there’s a stretch of silence — a space few are willing to sit with.</p>
+
+            <p>Taking the society’s collective response to individual behavioral pattern into consideration, it becomes crucial to argue, (with unshaken confidence) the inevitable existence of these gray areas in everyone’s life.</p>
+
+            <p>Among the infinite choices we make daily, the ones that keep us up at night usually revolve around the clash of brain and heart. Being crude vs. going plastic. Choosing comfort out of fear. Refusing to adapt to someone else’s definition. Desiring immediate growth vs. crawling your way there. The list goes on…</p>
+
+            <p>While most of these can be settled with the ‘more comfortable’ choice, there should be no societal pressure on sticking with just one answer — no matter how concisely it is arrived at.</p>
+
+            <p>Breaking out of binary thinking is never paid attention to, but it dictates authenticity, individuality, and — most importantly — what it means to be human.</p>
+
+            <p>“There’s no shame in letting your chaos drift off at a roundabout — but let’s be honest, two-lane roads are painfully boring.”</p>
+        </div>
+        
+        <a href="article.html" class="back-link">← Back to Article</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Duality of Existence</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .back-link {
+            margin-top: 3rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>The Duality of Existence</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>poetry</em></span>
+        </div>
+        
+        <div class="poem-content">
+            <p>Cornered from the world's perils,</p>
+            <p>To what should have been a foster,</p>
+            <p>There lied depths to 'soundness',</p>
+            <p>And grief; look, how sinister.</p>
+            <p>They preached of love,</p>
+            <p>And gathered chests of hearts,</p>
+            <p>But failed at sheltering their own;</p>
+            <p>Here— the wry misery starts.</p>
+            <p>Discussed religion, and picked up</p>
+            <p>Stories in cults, that ended in morals;</p>
+            <p>Steering clear of their cladded sins,</p>
+            <p>Still jewelling filthy webs with florals.</p>
+            <p>What kind of foster fosters pretence?</p>
+            <p>Losing brains, but calling the same sane;</p>
+            <p>Mighty dualism that makes you,</p>
+            <p>Forever indifferent to your kind's pain.</p>
+            <p>They narrow this down to normalcy,</p>
+            <p>I rebel and I rebel until I'm impelled to plead;</p>
+            <p>But who do you even find to blame,</p>
+            <p>When it's your fate that makes you bleed?</p>
+        </div>
+        
+        <a href="poetry.html" class="back-link">← Back to Poetry</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

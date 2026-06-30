@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>article</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .back-link {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>The GPT craze and my inexplainable aversion to it</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>article</em></span>
+        </div>
+        
+        <div class="poem-content">
+            <p>“AI will replace jobs and create jobs” — the punchline of an article dumped on earth.com, should not be evidently found appealing to the conscience of a sane audience.</p>
+
+            <p>As a writer with a schedule that rarely aligns with my passion for literature, I cannot get myself to fathom the tensile grip of my peers who have often found themselves romanticizing Kafka and Dostoevsky.</p>
+
+            <p>I hadn’t even fully recovered from the void created by accessing an E-Book when I was greeted with AI writing and refining stories on behalf of the authors.</p>
+
+            <p>I find my ‘Friends, Romans and countrymen’ blend into the digital spectrum of ‘GPT, Gemini and Grok’ and it breaks my heart a little each time I have to consult ChatGPT and make it decode another Gen-Z slang.</p>
+
+            <p>There’s a shift happening in the world right now, and I cannot get myself to like it.</p>
+
+            <p>Geniuses adapting to AI are being adopted by AI.</p>
+
+            <p>Physical labor was assumed to be at risk for a real long time but my personal take on the matter has led me to believe that AI continues to pose maximum threat to the creativity of mind.</p>
+
+            <p>Why should I make an effort to think if my digital friend can brainstorm and fetch ideas that no amount of personal pondering could lead me to?</p>
+
+            <p>This same article also quoted how researchers believe that 65% of today’s elementary school students will work in careers that don’t yet exist. Does that not invalidate the courses they’re being offered at this point of time?</p>
+
+            <p>Whatever ends generations of computers failed to meet are being widely realized and reimagined by the Fifth Gen. With advancements in the field of AI & ML, reasoning is being met at with a zeal that mirrors human curiosity and precision.</p>
+
+            <p>As open-ended as I want this piece of work to be with heavy emphasis on the rhetoric, my silly little heart will always be a hoarder of paperbacks — no swipe feels like a turned page.</p>
+        </div>
+        
+        <a href="article.html" class="back-link">← Back to Article</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

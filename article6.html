@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>article</title>
+
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .poem-content {
+            line-height: 2;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .poem-content p {
+            margin: 0.9rem 0;
+        }
+
+        .back-link {
+            margin-top: 3rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="poem">
+        <h2>Lava of Hate</h2>
+
+        <div id="dash">
+            <span>|</span>
+            <span><em>prose</em></span>
+        </div>
+
+        <div class="poem-content">
+            <p>There was a time when we were good—close friends.</p>
+            <p>I trusted you as one of my confidants and crowned you with the title of <em>magnanimity</em>.</p>
+            <p>Perhaps it was too grand a name, bestowed far too soon.</p>
+
+            <br>
+
+            <p>Had I waited longer, I might have tasted the venom beneath your sweetness—</p>
+            <p>jealousy simmering quietly, layered under honeyed words and tender gestures.</p>
+            <p>Your true feelings were never meant to be known,</p>
+            <p>hidden behind flattery and practiced warmth.</p>
+            <p>And so, I was deceived—oblivious to the intentions you harbored within.</p>
+
+            <br>
+
+            <p>I believed that staying with someone long enough binds you to them,</p>
+            <p>that attachment grows and you begin to reshape yourself for their sake.</p>
+            <p>I was wrong.</p>
+
+            <br>
+
+            <p>Within a month, fate acquainted me with a brutal truth:</p>
+            <p>I could never pretend to be a comrade to someone</p>
+            <p>who carried a sword for my back.</p>
+            <p>The precision with which you betrayed me,</p>
+            <p>wielding the authority you held, was almost admirable in its cruelty.</p>
+
+            <br>
+
+            <p>I may spend the rest of my life trying to heal—</p>
+            <p>convincing myself it was my fault, digesting the damage,</p>
+            <p>and learning to let go of someone who called me a friend</p>
+            <p>only when it served them.</p>
+
+            <br>
+
+            <p>Years have passed, and it shames me that I still haven’t moved on.</p>
+            <p>Not because you were irreplaceable,</p>
+            <p>but because I haven’t found someone worthy of the honesty I offer.</p>
+            <p>The hollow you carved into my heart may never be filled,</p>
+            <p>and perhaps I must learn to live with that absence.</p>
+
+            <br>
+
+            <p>I don’t wish to fill it with another person.</p>
+            <p>I refuse to use someone as a remedy for old wounds.</p>
+
+            <br>
+
+            <p>Because unlike you,</p>
+            <p>the blood that runs through my veins</p>
+            <p>does not yearn to erupt into a lava of hate.</p>
+        </div>
+
+        <a href="article.html" class="back-link">← Back to Article</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

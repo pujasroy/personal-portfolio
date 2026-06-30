@@ -1,0 +1,268 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BASE ===== */
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ===== NAV ===== */
+#nav {
+    background-color: rgb(230, 165, 101);
+    height: 2.5rem;
+    padding: 0.3rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ===== CONTENT ===== */
+#content {
+    padding: clamp(3rem, 8vw, 10rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(5rem, 12vw, 15rem);
+    align-items: center;
+}
+
+/* ===== ABOUT ===== */
+#about {
+    display: flex;
+    justify-content: center;
+    gap: clamp(2rem, 6vw, 7rem);
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex: 1 1 250px;
+}
+
+img {
+    width: clamp(250px, 24vw, 400px);
+    height: clamp(250px, 24vw, 400px);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 35%;
+}
+
+#text {
+    flex: 1 1 320px;
+    max-width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    text-align: right;
+}
+
+/* ===== SECTIONS ===== */
+#grow,
+#career {
+    width: clamp(90%, 60vw, 60vw);
+}
+
+#ideas {
+    width: 100%;
+}
+
+/* ===== FOOTER ===== */
+#textend {
+    display: flex;
+    gap: clamp(3rem, 10vw, 15rem);
+    width: 100%;
+}
+
+#left {
+    max-width: 50vh;
+}
+
+#right {
+    display: flex;
+    gap: 1rem;
+    border: 1px solid black;
+    height: max-content;
+}
+
+/* ===== FLUID TYPOGRAPHY ===== */
+html {
+    font-size: clamp(14px, 1.1vw, 16px);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+}
+
+h3 {
+    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+}
+
+p,
+li {
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+@media (max-width: 900px) {
+
+    #nav {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    #about {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #text {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    #textend {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #left {
+        max-width: 100%;
+    }
+}
+/* ===== Stack Ideas & Contradictions on small screens ===== */
+@media (max-width: 900px) {
+
+    #myself > div {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2.5rem;
+    }
+
+    #ideas1,
+    #ideas2,
+    #ideas3 {
+        width: 100%;
+    }
+}
+/* ===== Fix nav items disappearing on small screens ===== */
+@media (max-width: 900px) {
+
+    #nav {
+        height: auto;              /* allow nav to grow */
+        align-items: flex-start;
+    }
+
+    #nav > div:last-child {
+        display: flex;
+        flex-wrap: wrap;           /* allow links to wrap */
+        gap: 1rem;
+        width: 100%;
+    }
+}
+/* ===== Reorder image under text on small screens ===== */
+@media (max-width: 900px) {
+
+    #about {
+        flex-direction: column;
+    }
+
+    #text {
+        order: 1;          /* text first */
+        text-align: left;
+    }
+
+    #image {
+        order: 2;          /* image below text */
+        margin-top: 2rem;
+    }
+}
+/* ===== Global heading size adjustment ===== */
+
+h2 {
+    font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+}
+
+h3 {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+}
+
+/* ===== Section spacing for one-screen visibility ===== */
+/* ===== ONLY add gap under sections, nothing else ===== */
+
+#about,
+#grow,
+#writings,
+#readings,
+#myself,
+#career {
+    margin-bottom: 10rem;
+}
+
+#about{
+    margin-top:7rem;
+}
+/* ===== Center align contact text + links ===== */
+
+#textend {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#right {
+    justify-content: center;
+}
+#nav > div:last-child {
+    margin-left: auto;
+}
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #2b2b2b;
+            --muted-text: rgb(88, 88, 88);
+            --accent: rgb(230, 165, 101);
+            --link-color: rgb(220, 145, 84);
+            --dash-color: rgb(83, 83, 83);
+            }
+
+            body.dark {
+                --bg-color: #121212;
+                --text-color: #e6e6e6;
+                --muted-text: #b5b5b5;
+                --accent: #c48a55;
+                --link-color: #d6a26a;
+                --dash-color: #9a9a9a;
+            }
+/* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}

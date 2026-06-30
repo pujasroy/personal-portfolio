@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>article</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .back-link {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>Dear ‘insert name’,</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>letter</em></span>
+        </div>
+        
+        <div class="poem-content">
+            <p>The plane is crashing and I’m filled with a hybrid of emotions. I can feel the hammering of the hundred hearts around me as they cry out in fear, wanting to live just a little more. Just a little better. I can feel the panic of the air hostesses as they beg others to not panic. I can feel the beating of the window panes as they prepare for their final landing. And last but not the least, I can feel the trembling of my own hands as I begin to address my last and only letter to you.</p>
+
+            <p>The chaos within my head which keeps finding its way back to you will hopefully find some peace and consolation through this letter.</p>
+
+            <p>I can tell for sure that every cell of my body misses you and hates me for not seeing you when I had the opportunity to. But tell me, was it wrong of me to push you away and play evil in our story when I clearly knew that my end was approaching? Of course, I agree that I didn’t predict such an awful close of my life’s story but when I came to know that I had to make a choice between letting you get attached just to wait for the inevitable and breaking you before the day comes to pass, I decided to go with the latter. But I, simultaneously despised myself for the very same reason.</p>
+
+            <p>I know it’s not the perfect time to convey my emotions to you but nonetheless, my heart just wants you to know how much I loved you. And how much I loved the way you loved me back for it knows that this might be my last I love you to you and for some reason, I think I’m ready to finally disclose my most indiscreet secret. The thing that forced me into oblivion. My disease. My Cancer.</p>
+
+            <p>I’d had the disease ever since I remember going to the hospital. It was the only thing for which I paid the hospitals a visit every month. During childhood, every appointment ended with a white lie by the doctors, who explained to me the improvement in my condition. But soon, I was to face the reality so I pity the ten year old who believed those lies, in the hopes of a better tomorrow.</p>
+
+            <p>I’m scared now. The entire cabin is shaking and it’s hard to maintain the balance. But let me tell you that that was it for the one and only secret I’d kept from you in my entire entire of twenty-four years. I hope this letter reaches you even if the pressure tears my body apart. For it has been my only outlet to all the emotions that I’m feeling right now.</p>
+
+            <p>Supposing I’ll be long gone by the time you read this letter, I only want you to forgive me, if you ever find it in your heart to do so.</p>
+
+            <p><em>Yours forever,<br>(e)X</em></p>
+        </div>
+        
+        <a href="article.html" class="back-link">← Back to Article</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In the midst of the shallowest pool</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .back-link {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>In the midst of the shallowest pool</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>poetry</em></span>
+        </div>
+        
+        <div class="poem-content">
+            <p>in the midst of the shallowest pool,</p>
+            <p>i found a body drowning, screaming.</p>
+            <p>so without another thought, i plunged,</p>
+            <p>into a fate changing darkness,</p>
+            <p>to save you, a life worth nothing now.</p>
+            <p>not because i pitied a sinking soul,</p>
+            <p>but because of my underestimation</p>
+            <p>of the apparent depth of the abyss,</p>
+            <p>and my incognizance of your identity,</p>
+            <p>tempted me to stretch my hand.</p>
+            <p>the dependence of a life on myself,</p>
+            <p>lent a sudden sense of reliability.</p>
+            <p>but the very consecutive moment,</p>
+            <p>filled my conscience with regrets.</p>
+            <p>that how i should've considered myself,</p>
+            <p>not as a lifeline to be exhausted,</p>
+            <p>but as a human being, all but selfish.</p>
+            <p>never once did i think, that you'd pull me in,</p>
+            <p>that it was a part of a well planned game,</p>
+            <p>that i stepped into and lost all that i had.</p>
+            <p>if only i'd deemed my life worthy enough,</p>
+            <p>i would've been cackling and joking,</p>
+            <p>with the forsaken family that i left behind,</p>
+            <p>the one that always saw me above all.</p>
+            <p>but now that the moments are all gone,</p>
+            <p>i admit how i miss each day terribly.</p>
+            <p>i want to live again, can you hear me?</p>
+            <p>or are you still as deaf as you were that day?</p>
+            <p>shutting every door of your ears,</p>
+            <p>reluctant to hear my drowning voice.</p>
+            <p>but i often wonder things that i shouldn't,</p>
+            <p>that maybe one day you'd realize,</p>
+            <p>how important it is for a man to survive,</p>
+            <p>in order to feed the rest of his family.</p>
+            <p>or that, if you, too, are rotting in hell</p>
+            <p>not the hell that contrasts the heaven,</p>
+            <p>but the hell which forces you to see,</p>
+            <p>the family that can't see you anymore,</p>
+            <p>to hear the voice of your kids,</p>
+            <p>beyond whose reach your voice lies.</p>
+            <p>to touch the woman of your dreams,</p>
+            <p>whom you are impalpable to after death.</p>
+        </div>
+        
+        <a href="poetry.html" class="back-link">← Back to Poetry</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

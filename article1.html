@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>article</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .back-link {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>You are somebody’s something, but you are also your you</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>article</em></span>
+        </div>
+        
+        <div class="poem-content">
+
+            <p>It was the fall of 2020 when I was absorbed in this beauty <em>‘Turtles All The Way Down’</em> by John Green. To this day, it remains one of my top picks among novels and a go-to book I’d give anything to read again for the first time. It’s my comfort novel, comprising of pages around which I’ve built my personality. Nonetheless, re-reading it is a luxury which I still haven’t had the time to tick off of my TDL.</p>
+
+            <p>One of the reasons this book stood out in my vast clutter of literature is the slow and steady knitting around the sensitive topic of Aza’s thoughtful spiral, and the deep solace I felt in personally connecting with her character. Discreet themes like mental health, friendship and acceptance have been touched upon and explored over and over again.</p>
+
+            <p>While this book shelters my comfort characters, and morals which I fall back on each time I find myself lost in my wreck of a world, the one quote that I would treasure even on my deathbed is “You are somebody’s something, but you are also your you”.</p>
+
+            <p>Growing up, I was met with streams of suggestions, seas of opinions, and oceans of expectations — each stronger than the previous fulfilled one. I was asked politely to agree, and have labels shoved down my way if I dared to shake hands with the rebel in me. I was forced to make peace with others’ perception of me, and shapeshift to fit into the standards set by the ones who thought that their way was the only right way. Any dismissal of their opinion made me the bad guy.</p>
+
+            <p>I lost my individuality — my way of doing things. I started fearing judgement. I could never rest knowing my actions upset any soul. The word “no” sublimed from my story. I became a puppet, or worse — I had always been one. The strings of attachment to loved ones have tugged at my stars since the day I was born. They choked my essence the entire time. And continued to choke me as long as they could. As long as I cared about their labels. Their opinions. Their perception of me.</p>
+
+            <p>But one day, I stopped. The weight of giving in and screwing my peace to fix things I never broke in the first place opened doors to self-love. I snapped every string that made me feel guilty for choosing my peace over someone else’s expectations. I put an end to prioritizing societal standards over living my life my way.</p>
+
+            <p>I befriended the rebel in me. She did not overthink her no’s.</p>
+
+            <p>It took me years to come to terms with being ‘my me’ over ‘somebody’s something’ and even today, I flinch before taking a firm stand for myself. But here’s a cheat code: People who cannot deal with your tides have no right in throwing seas of opinions your way.</p>
+
+            <p>So pick yourself. Prioritize your peace. And don’t look back.</p>
+        </div>
+        
+        <a href="article.html" class="back-link">← Back to Article</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To you, the living</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        #poem {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 4rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        #dash {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        #dash span {
+            margin: 0;
+        }
+        .poem-content {
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+        .back-link {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="poem">
+        <h2>To you, the living</h2>
+        <div id="dash">
+            <span>|</span>
+            <span><em>poetry</em></span>
+        </div>
+        
+        <div class="poem-content">
+            <p>To you, the living</p>
+            <p>My last few words</p>
+            <p>As I lay here helplessly,</p>
+            <p>Might just juxtapose my entire life of misery.</p>
+            <p>It doesn't feel right to leave,</p>
+            <p>but rather live.</p>
+            <p>Now that I look back,</p>
+            <p>Life was beautiful</p>
+            <p>Far more beautiful than what I knew</p>
+            <p>But it turns out that we only appreciate things after they're gone.</p>
+            <p>I'm glad I survived those rough days and I hope you all will, too.</p>
+            <p>A piece of advice:</p>
+            <p>Cherish what you have now</p>
+            <p>For there might be some hidden melodies that do not sparkle.</p>
+            <p>And that one last day is all it takes for you to realize</p>
+            <p>The love &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The lost &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The connection</p>
+            <p>The love:</p>
+            <p>Those selected people reveal It's all serendipitous</p>
+            <p>But most die keeping within</p>
+            <p>Appreciate that "love"</p>
+            <p>For that perfect moment, you've been waiting for</p>
+            <p>Might just fade away in an instant.</p>
+            <p>The lost:</p>
+            <p>Raise a toast to that one love of yours,</p>
+            <p>Who didn't wait for your confession</p>
+            <p>And hence led a life devoid of (a.k.a sans) love</p>
+            <p>The connection:</p>
+            <p>Might just be a kinship</p>
+            <p>Or that worn away relationship,</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for you never know</p>
+            <p>If that's the last connection you ever feel.</p>
+            <p>My last few words,</p>
+            <p>To the living</p>
+            <p>That I can't ever physically come in contact with.</p>
+            <p>Take your time to go for walks.</p>
+            <p>By the park.</p>
+            <p>Alongside that rectangular park.</p>
+            <p>And appreciate what you have,</p>
+            <p>Even what you don't.</p>
+            <p>For you never know who you may lose today,</p>
+            <p>Or who may lose you someday?</p>
+        </div>
+        
+        <a href="poetry.html" class="back-link">← Back to Poetry</a>
+    </div>
+    <script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+</body>
+</html>

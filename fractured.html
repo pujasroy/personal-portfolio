@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poetry</title>
+    <style>
+        /* ---------- Dark mode brute override ---------- */
+body.dark {
+    background-color: #0f0f0f;
+}
+
+body.dark * {
+    color: #e6e6e6 !important;
+}
+
+body.dark a {
+    color: #e6a565 !important;
+}
+
+body.dark #nav {
+    background-color: #111;
+}
+
+body.dark img {
+    filter: brightness(0.9) contrast(1.05);
+}
+
+            :root {
+        --bg-color: #ffffff;
+        --text-color: #2b2b2b;
+        --muted-text: rgb(88, 88, 88);
+        --accent: rgb(230, 165, 101);
+        --link-color: rgb(220, 145, 84);
+        --dash-color: rgb(83, 83, 83);
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e6e6e6;
+            --muted-text: #b5b5b5;
+            --accent: #c48a55;
+            --link-color: #d6a26a;
+            --dash-color: #9a9a9a;
+        }
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        #poetry-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .poem {
+            margin: 5rem 0;
+        }
+
+        .poem h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .dash {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .poem-content {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .poem-content p {
+            margin: 0.5rem 0;
+        }
+
+        .back-link {
+            display: block;
+            margin: 4rem 0 2rem;
+            text-align: center;
+            color: rgb(230, 165, 101);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div id="poetry-page">
+
+    <!-- POEM 1 -->
+    <section class="poem">
+        <h2>I see flashes of fractured ties everyday</h2>
+        <div class="dash">
+            <span>|</span><span><em>poetry</em></span>
+        </div>
+
+        <div class="poem-content">
+            <p>I see flashes of fractured ties everyday,</p>
+            <p>Bonds that once were, but now are out of existence.</p>
+            <p>Tunes which exhibited melody at a point,</p>
+            <p>Today, they make me break down at the shortest lyric.</p>
+
+            <p>[Occupied but] empty mirrors on the wall,</p>
+            <p>Which mourn the loss of all that once was,</p>
+            <p>But now refuses to be.</p>
+
+            <p>I feel helpless, hopeless,</p>
+            <p>Searching for the remnants of my past acquaintances</p>
+            <p>In every person that I meet, in every hand that I shake,</p>
+            <p>In this densely populated world,</p>
+            <p>Which does not seem to stop for anyone.</p>
+        </div>
+    </section>
+
+    <!-- POEM 2 -->
+    <section class="poem">
+        <h2>Someone said I feel things too deeply</h2>
+        <div class="dash">
+            <span>|</span><span><em>poetry</em></span>
+        </div>
+
+        <div class="poem-content">
+            <p>Someone said I feel things too deeply,</p>
+            <p>And another said I feel nothing at all.</p>
+            <p>I still perfectly carry the weight</p>
+            <p>Of two juxtaposed opinions,</p>
+            <p>Not knowing what I did to deserve either.</p>
+
+            <p>A person was being chased by me,</p>
+            <p>While she was busy chasing another.</p>
+            <p>It was a phase that lasted for months but</p>
+            <p>I still haven’t figured out the why</p>
+            <p>Behind the concept of chase-me-while-I-chase-her.</p>
+        </div>
+    </section>
+
+    <!-- POEM 3 -->
+    <section class="poem">
+        <h2>My secret folder</h2>
+        <div class="dash">
+            <span>|</span><span><em>poetry</em></span>
+        </div>
+
+        <div class="poem-content">
+            <p>An elderly figure taught me to chop the fruits a certain way;</p>
+            <p>To hold the fork a certain way; to lay the table a certain way.</p>
+            <p>Never did I question her manners, her way of doing things,</p>
+            <p>That she knowingly passed on to me,</p>
+            <p>That I will unknowingly pass down to another.</p>
+
+            <p>My secret folder still shelters all the pictures</p>
+            <p>Of me and my ex-friends, ex-lovers, ex-kins</p>
+            <p>[I always make the last term make sense].</p>
+            <p>I never had the courage to delete them,</p>
+            <p>I never wanted the courage to delete their existence.</p>
+        </div>
+    </section>
+
+    <a href="poetry.html" class="back-link">← Back to Poetry</a>
+
+</div>
+<script>
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        body.classList.add("dark");
+        if (toggle) toggle.textContent = "☾";
+    }
+
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const isDark = body.classList.contains("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+            toggle.textContent = isDark ? "☾" : "☼";
+        });
+    }
+    </script>
+
+</body>
+</html>
